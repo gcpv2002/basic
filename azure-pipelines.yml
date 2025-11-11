@@ -1,0 +1,12 @@
+trigger: none
+
+pool:
+  name: Default
+  demands: agent.os -equals Linux
+
+steps:
+  - script: |
+      echo "✅ Hello from $(Agent.Name)"
+      echo "Workspace: $(Pipeline.Workspace)"
+      uname -a
+    displayName: "Test self-hosted agent"
